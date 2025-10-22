@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
+
+@font-face
+{
+    font-family: akbar;
+    src: url(/fonts/akbar/akbar.ttf);
+}
+@font-face
+{
+    font-family: simpsonFont;
+    src: url(/fonts/simpsonfont/Simpsonfont\ DEMO.otf);
+}
+
+
+body
+{
+    background-image: linear-gradient(to bottom, #5Eb5E2, #98D9F9);
+    margin: 0;
+    min-height: 100%;
+
+    overflow:hidden;
+
+}
+
+#bgContainer
+{
+    height: 100vh;
+    position: relative;
+}
+#imgContainer
+{
+    position: absolute;
+    z-index: -1;
+
+}
+
+#cloudBr
+{
+    position: absolute;
+    top: 0;
+    left:236%;
+}
+
+#cloudFl
+{
+    position: absolute;
+    top: 180%;
+    left: 0%;
+}
+
+#cloudFr
+{
+    position: absolute;
+    top: 180%;
+    right: -70%;
+
+}
+
+/* ***HOME SCREEN***  */
+
+#homeScreen
+{
+    min-height: 100vh;
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#msgContainer
+{
+    /* FOR TESTING TOGGLE THIS */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+#welcomeMsg
+{
+    font-family: akbar;
+    color: #FFD900;
+    font-size: 4em;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+
+    margin: 0;
+}
+
+#instructionMsg
+{
+    text-align: center;
+    font-family: 'ADLaM Display';
+    color: white;
+    font-size: 1.5em;
+
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+#titleContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+
+}
+
+#titleMainText
+{
+    color: #FFD900;
+    font-size: 10.25em;
+    text-align: center;
+
+    font-family: 'simpsonFont';
+    text-shadow: black 1px;
+    text-shadow:
+        -3px -3px 0 black,
+        3px -3px 0 black,
+        -3px 3px 0 black,
+        3px 3px 0 black;
+
+    margin: 0;
+}
+
+#startBtn
+{
+    background-color: #FFD900;
+    border-style: solid;
+    width: 300px;
+    height: 80px;
+    text-align: center;
+    
+}
+
+#startBtn h2 
+{
+    color: #ffed89;
+    font-family: akbar;
+    font-size: 3em;
+
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    margin: 0;
+
+}
+
+#startBtn:hover
+{
+    background-color: #ffed89;
+}
+
+/* GAME SCREEN */
+
+#gameScreen
+{
+    /* FOR TESTING TOGGLE THIS */
+
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+}
+
+#gameBg
+{
+    width: 1080px;
+    height: 720px;
+
+    display: flex;
+    flex-direction: column;
+    /* For Text */
+    align-items: center;
+   /* For Pink Bg */
+    align-self: center;
+    justify-content: center;
+    
+
+    background-color: #F8BCE0;
+    border: 10px solid #FFD9F0;
+
+}
+
+#gameBg h2
+{
+    font-family: "ADLaM Display";
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+}
+
+#buttonTopRow
+{
+    width: 100%;
+
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: 4em;
+
+}
+
+#buttonBottomRow
+{
+    width: 100%;
+  
+    margin: 0;
+    margin-top: 20px ;
+
+
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: 4em;
+
+}
+
+.letterBtn
+{
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid 5px #57BEC9;
+    background-color: #CA8A53;
+
+    box-shadow:15px inset;
+    
+}
+
+.letterBtn p
+{
+    font-family: 'simpsonFont';
+    color: #FFD900;
+
+    font-size: 1.5em;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;    
+    /* text-shadow: -5px 5px 0 rgba(0, 0, 0, 0.5); */
+
+}
+
+
+.letterBtn:hover
+{
+    background-color: #eba262;
+
+}
+
+.letterBtn p:hover 
+{
+    font-size: 2em;
+}
+
+#replayDohBtn
+{
+    background-color: white;
+    width: 300px;
+    height:60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+#replayDohBtn
+{
+    font-family: 'ADLaM Display';
+    background-color: #FFD900;
+}
+
+#replayDohBtn h3
+{
+    color: #FFFDBE;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+    font-size: 2em;
+}
+
+/* #replayDohBtn:hover
+{
+    background-color: #ffe656;
+} */
+
+#replayDohBtn h3:hover
+{
+    font-size: 2.25em;
+
+}
