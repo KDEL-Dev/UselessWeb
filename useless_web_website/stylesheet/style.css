@@ -3,12 +3,12 @@
 @font-face
 {
     font-family: akbar;
-    src: url(/fonts/akbar/akbar.ttf);
+    src: url(/UselessWeb/useless_web_website/fonts/akbar/akbar.ttf);
 }
 @font-face
 {
     font-family: simpsonFont;
-    src: url(/fonts/simpsonfont/Simpsonfont\ DEMO.otf);
+    src: url(/UselessWeb/useless_web_website/fonts/simpsonfont/Simpsonfont\ DEMO.otf);
 }
 
 
@@ -61,7 +61,7 @@ body
 #homeScreen
 {
     min-height: 100vh;
-    display: none;
+    display: flex;
 
     flex-direction: column;
     align-items: center;
@@ -170,7 +170,7 @@ body
 {
     /* FOR TESTING TOGGLE THIS */
 
-    display: flex;
+    display: none;
     justify-content: center;
     min-height: 100%;
 }
