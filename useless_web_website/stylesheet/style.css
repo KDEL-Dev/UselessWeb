@@ -3,12 +3,14 @@
 @font-face
 {
     font-family: akbar;
-    src: url(/UselessWeb/useless_web_website/fonts/akbar/akbar.ttf);
+    /* For some reason these pathes keep breaking when switching between computer and laptop */
+    src: url(/fonts/akbar/akbar.ttf);
 }
 @font-face
 {
     font-family: simpsonFont;
-    src: url(/UselessWeb/useless_web_website/fonts/simpsonfont/Simpsonfont\ DEMO.otf);
+    /* For some reason these pathes keep breaking when switching between computer and laptop */
+    src: url(/fonts/simpsonfont/Simpsonfont\ DEMO.otf);
 }
 
 
@@ -26,41 +28,70 @@ body
 {
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 #imgContainer
 {
     position: absolute;
     z-index: -1;
+    overflow: visible;
+}
 
+@keyframes skySubtleMove
+{
+    from
+    {
+        transform: translateX(0);
+    }
+    to
+    {
+        transform: translateX(-1250px);
+    }
+}
+
+#cloudBl
+{
+    position: relative;
+    animation: skySubtleMove 180s infinite linear;
 }
 
 #cloudBr
 {
     position: absolute;
     top: 0;
-    left:236%;
+    left:150%;
+    z-index: 4;
+    animation: skySubtleMove 180s infinite linear;
 }
 
 #cloudFl
 {
     position: absolute;
-    top: 180%;
-    left: 0%;
+    top: 228%;
+    left: 20%;
+    z-index: 2;
+    animation: skySubtleMove 180s infinite linear;
 }
 
 #cloudFr
 {
     position: absolute;
-    top: 180%;
-    right: -70%;
-
+    top: 200%;
+    right: -150%;
+    z-index: 3;
+    animation: skySubtleMove 180s infinite linear;
 }
 
-/* ***HOME SCREEN***  */
+
+
+
+
+/* *****HOME SCREEN*****  */
 
 #homeScreen
 {
     min-height: 100vh;
+    /* WHEN DONE SET DISPLAY FLEX!!! */
     display: flex;
 
     flex-direction: column;
@@ -141,13 +172,19 @@ body
     width: 300px;
     height: 80px;
     text-align: center;
-    
+
+    border-radius: 25px; 
+    border: 2px black solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #startBtn h2 
 {
     color: #ffed89;
-    font-family: akbar;
+    font-family: ADLaM Display;
     font-size: 3em;
 
     text-shadow:
@@ -157,18 +194,19 @@ body
         1px 1px 0 black;
     margin: 0;
 
+   
 }
 
-#startBtn:hover
+#startBtn:hover h2
 {
-    background-color: #ffed89;
+    font-size: 3.5em;
+    cursor: pointer;
 }
 
-/* GAME SCREEN */
+/* *****GAME SCREEN***** */
 
 #gameScreen
 {
-    /* FOR TESTING TOGGLE THIS */
 
     display: none;
     justify-content: center;
@@ -181,6 +219,7 @@ body
     height: 720px;
 
     display: flex;
+
     flex-direction: column;
     /* For Text */
     align-items: center;
@@ -212,6 +251,7 @@ body
 
     font-size: 4em;
 
+    gap: 20px;
 }
 
 #buttonBottomRow
@@ -233,8 +273,8 @@ body
 
 .letterBtn
 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 
     display: flex;
     justify-content: center;
@@ -245,6 +285,7 @@ body
 
     box-shadow:15px inset;
     
+    cursor: pointer;
 }
 
 .letterBtn p
@@ -254,7 +295,6 @@ body
 
     font-size: 1.5em;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;    
-    /* text-shadow: -5px 5px 0 rgba(0, 0, 0, 0.5); */
 
 }
 
@@ -265,9 +305,9 @@ body
 
 }
 
-.letterBtn p:hover 
+.letterBtn:hover p 
 {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 #replayDohBtn
@@ -281,11 +321,16 @@ body
     align-items: center;
 
     margin-top: 50px;
+
+    border-radius: 25px;
+
+   
 }
 
 #replayDohBtn
 {
     font-family: 'ADLaM Display';
+    border: black 2px solid;
     background-color: #FFD900;
 }
 
@@ -296,13 +341,270 @@ body
     font-size: 2em;
 }
 
-/* #replayDohBtn:hover
-{
-    background-color: #ffe656;
-} */
 
-#replayDohBtn h3:hover
+
+#replayDohBtn:hover h3
 {
     font-size: 2.25em;
+    cursor: pointer;
+}
 
+#returnColumn
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#alignProgress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px; 
+    box-sizing: border-box;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 10px;
+}
+
+
+#leftProgress,
+#rightProgress {
+    width: 100px;
+    height: 600px;
+    margin: 0; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+#returnColumn {
+    flex-grow: 1;                   
+    display: flex;
+    flex-direction: column;
+    align-items: center;            
+    justify-content: center;       
+}
+
+/* Progress Bar Circles and Donuts */
+
+.progressCenter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* centered */
+.progressContainer > div {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+/* place img on same position as circle */
+.progressContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+/* create circle */
+.circle
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #eee;
+    border: 2px solid #000000;
+
+}
+
+
+.circle7
+{
+    display: block;
+}
+
+.img7
+{
+    display: none;
+}
+
+.circle6
+{
+    display: block;
+}
+
+.img6
+{
+    display: none;
+}
+
+.circle5
+{
+    display: block;
+}
+
+.img5
+{
+    display: none;
+}
+
+.circle64
+{
+    display: block;
+}
+
+.img4
+{
+    display: none;
+}
+
+.circle3
+{
+    display: block;
+}
+
+.img3
+{
+    display: none;
+}
+
+.circle2
+{
+    display: block;
+}
+
+.img2
+{
+    display: none;
+}
+
+.circle1
+{
+    display: block;
+}
+.circle1 .circle
+{
+    background-color: #FFD900;
+}
+
+.img1
+{
+    display: none;
+}
+
+
+
+/* *****RESULT SCREEN***** */
+
+#resultScreen
+{
+    display: none;
+    justify-content: center;
+    min-height: 100%;
+
+}
+
+#resultBg
+{
+    width: 1080px;
+    height: 480px;
+
+    display: flex;
+
+    flex-direction: column;
+    /* For Text */
+    align-items: center;
+   /* For Pink Bg */
+    align-self: center;
+
+    justify-content: center;
+    
+
+    background-color: #F8BCE0;
+    border: 10px solid #FFD9F0;  
+}
+
+#resultTextContainer
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultGmTitle
+{
+    font-family: Simpsonfont;
+    color: #FFD900;
+    font-size: 5em;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+
+    margin: 0;
+
+    
+}
+
+#resultMsg
+{
+    font-family: "ADLaM Display";
+    color: white;
+    font-size: 1.5em;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+#playAgainBtn
+{
+    background-color: #FFD900;
+    
+    width: 300px;
+    height:60px;
+
+    margin-top: 50px;
+
+    border-radius: 25px;
+    border: black 2px solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playAgainBtn h3
+{
+    color: #FFFDBE;
+    font-family: 'ADLaM Display';
+
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+    font-size: 2em;
+
+
+}
+
+
+#playAgainBtn:hover h3
+{
+    font-size: 2.2em;
+    cursor: pointer;
 }
