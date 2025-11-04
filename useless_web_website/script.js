@@ -290,6 +290,13 @@ window.onload = function()
         else
         {   
             clickCounter += 1;
+
+            aButton.classList.add("shake");
+            aButton.addEventListener("animationend", () => 
+                {
+                    aButton.classList.remove("shake");
+                }
+            );
         }
         
     })
@@ -322,6 +329,13 @@ window.onload = function()
         else
         {   
             clickCounter += 1;
+
+            bButton.classList.add("shake");
+            bButton.addEventListener("animationend", () => 
+                {
+                    bButton.classList.remove("shake");
+                }
+            );
         }  
     })
 
@@ -354,6 +368,13 @@ window.onload = function()
         else
         {   
             clickCounter += 1;
+
+            cButton.classList.add("shake");
+            cButton.addEventListener("animationend", () => 
+                {
+                    cButton.classList.remove("shake");
+                }
+            );
         }  
     })
 
@@ -386,6 +407,13 @@ window.onload = function()
         else
         {   
             clickCounter += 1;
+
+            dButton.classList.add("shake");
+            dButton.addEventListener("animationend", () => 
+                {
+                    dButton.classList.remove("shake");
+                }
+            );
         }  
     })
 
@@ -417,7 +445,14 @@ window.onload = function()
             }
             else
             {   
-            clickCounter += 1;
+                clickCounter += 1;
+
+                eButton.classList.add("shake");
+                eButton.addEventListener("animationend", () => 
+                {
+                    eButton.classList.remove("shake");
+                }
+            );
             }  
         })
 
@@ -450,6 +485,12 @@ window.onload = function()
             else
             {   
             clickCounter += 1;
+                fButton.classList.add("shake");
+                fButton.addEventListener("animationend", () => 
+                {
+                    fButton.classList.remove("shake");
+                }
+            );
             }  
         })
 
@@ -481,7 +522,13 @@ window.onload = function()
             }
             else
             {   
-            clickCounter += 1;
+                clickCounter += 1;
+                gButton.classList.add("shake");
+                gButton.addEventListener("animationend", () => 
+                {
+                    gButton.classList.remove("shake");
+                }
+            );
             }  
         })
 
